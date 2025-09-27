@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Habit Quest - Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="logo">Habit Quest</div>
+      <nav>
+        <a href="index.html">Dashboard</a>
+        <a href="habits.html">Habits</a>
+        <a href="profile.html">Profile</a>
+      </nav>
+    </div>
+    <h1 id="greeting">Welcome!</h1>
+    <p>Track your progress and stay motivated</p>
+  </header>
+
+  <main class="grid">
+    <div>
+      <div class="card">
+        <h2>Level <span id="level">1</span></h2>
+        <div class="progress">
+          <div class="bar" id="xpBar"></div>
+        </div>
+        <p>XP: <span id="xp">0</span></p>
+      </div>
+
+      <div class="card">
+        <h2>Stats</h2>
+        <div class="stats">
+          <div>Completed: <span id="completed">0</span></div>
+          <div>Best Streak: <span id="bestStreak">0</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Badges</h2>
+        <div id="badges"></div>
+      </div>
+    </div>
+
+    <div>
+      <div class="card">
+        <h2>Your Habits</h2>
+        <button onclick="location.href='habits.html'">+ Add Habit</button>
+        <div id="habitList"></div>
+      </div>
+
+      <div class="card">
+        <h2>Friends Activity</h2>
+        <ul id="friendsFeed"></ul>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

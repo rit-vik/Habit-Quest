@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Habit Quest - Profile</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Your Profile</h1>
+    <nav>
+      <a href="index.html">Dashboard</a>
+      <a href="habits.html">Habits</a>
+      <a href="profile.html">Profile</a>
+    </nav>
+  </header>
+
+  <main class="grid">
+    <!-- Stats Card -->
+    <div class="card">
+      <h2>Stats</h2>
+      <p>Total Completed: <span id="totalCompleted">0</span></p>
+      <p>Longest Streak: <span id="longestStreak">0</span></p>
+      <p>XP: <span id="totalXP">0</span></p>
+      <p>Level: <span id="level">1</span></p>
+    </div>
+
+    <!-- Badges Card -->
+    <div class="card">
+      <h2>Badges</h2>
+      <div id="badges"></div>
+    </div>
+
+    <!-- Reset Button Card -->
+    <div class="card">
+      <h2>Settings</h2>
+      <button id="reset">Reset Data</button>
+    </div>
+  </main>
+
+  <script>
+    // Load profile stats from localStorage
+    function loadProfile() {
+      const state = JSON.parse(localStorage.getItem("habitQuestData")) || {
+        habits: [],
+        xp: 0,
+        completions: 0,
+        bestStreak: 0
+      };
+
+      const totalCompleted = state.completions;
+      const longestStreak = state.bestStreak;
+      const totalXP = state.xp;
+
+      // Level = floor(totalXP / 100) + 1
+      const level = Math.floor(totalXP / 100) + 1;
+
+      document.getElementById("totalCompleted").textContent = totalCompleted;
+      document.getElementById("longestStreak").textContent = longestStreak;
+      document.getElementById("totalXP").textContent = totalXP;
+      document.getElementById("level").textContent = level;
+
+      // Badges (example logic)
+      const badges = document.getElementById("badges");
+      badges.innerHTML = "";
+      if (totalCompleted >= 1) badges.innerHTML += "<span class='badge'>Getting Started</span>";
+      if (longestStreak >= 5) badges.innerHTML += "<span class='badge'>5-Day Streak</span>";
+      if (totalXP >= 500) badges.innerHTML += "<span class='badge'>XP Master</span>";
+    }
+
+    // Reset Data Handler
+    document.getElementById("reset").addEventListener("click", () => {
+      if (confirm("Are you sure you want to reset all progress?")) {
+        // Clear habitQuestData
+        localStorage.removeItem("habitQuestData");
+        alert("All data reset. Reloading...");
+        location.reload();
+      }
+    });
+
+    loadProfile();
+  </script>
+</body>
+</html>

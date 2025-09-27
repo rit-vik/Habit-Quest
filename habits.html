@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Habit Quest - Habits</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Manage Habits</h1>
+    <nav>
+      <a href="index.html">Dashboard</a>
+      <a href="habits.html">Habits</a>
+      <a href="profile.html">Profile</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="card">
+      <h2>Add New Habit</h2>
+      <input type="text" id="habitName" placeholder="Enter habit name" />
+      <button onclick="addHabit()">Add</button>
+    </div>
+
+    <div class="card">
+      <h2>Track Your Habits</h2>
+      <div id="habitList"></div>
+    </div>
+
+    <div class="card">
+      <h2>Manage Habits</h2>
+      <ul id="manageHabits"></ul>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
