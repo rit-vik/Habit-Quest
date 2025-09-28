@@ -153,9 +153,9 @@ function loadDashboard() {
   const feed = document.getElementById("friendsFeed");
   if (feed) {
     feed.innerHTML = `
-      <li>✅ Alex completed "Workout"</li>
-      <li>📚 Sam read for 2 days streak</li>
-      <li>🔥 Priya hit a 5-day streak</li>
+      <li>✅ Devansh completed "Workout"</li>
+      <li>📚 Tejas read for 2 days streak</li>
+      <li>🔥 Maira hit a 5-day streak</li>
     `;
   }
 
@@ -168,3 +168,4 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   renderHabits();
 });
+
