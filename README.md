@@ -23,4 +23,22 @@ The goal of this project is to combine productivity with gamification. Users can
 - index.html
 - style.css
 - script.js
-- assets
+- assets/
+- habits.html
+- profile.html
+
+## Contributors
+
+- Ritvik Kar  
+- Avantika Bhattacharya  
+
+## Future Improvements
+
+- Add user authentication  
+- Integrate backend for data storage  
+- Provide detailed progress analytics  
+- Improve UI/UX and add more customization options  
+
+## License
+
+This project is open source and available under the MIT License.
